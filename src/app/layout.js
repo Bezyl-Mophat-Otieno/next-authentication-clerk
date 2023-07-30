@@ -2,6 +2,7 @@ import './globals.css'
 import { Poppins } from 'next/font/google'
 import Header from './components/header/Header'
 import { ClerkProvider } from '@clerk/nextjs'
+import { shadesOfPurple } from '@clerk/themes'
 
 
 const poppins = Poppins({ subsets: ['latin'] , weight: ['100', '700' , '800'] , })
@@ -15,7 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-      <ClerkProvider>
+      <ClerkProvider appearance={{
+        baseTheme:shadesOfPurple
+      }}>
       <Header/>
       {children}
       </ClerkProvider>
