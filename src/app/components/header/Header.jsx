@@ -18,7 +18,8 @@ function Header() {
     { !userId &&<button className={styles.signUpBtn}>
     <Link href="/sign-up" className={styles.link}>SignUp</Link>
     </button>}
-    <UserButton/>
+    {userId &&  <Link href={'/profile'} className={styles.link}>Profile</Link>}
+    <UserButton afterSignOutUrl='/'/>
     </div>
     </>
   )
